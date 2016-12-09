@@ -1,0 +1,215 @@
+#!/usr/bin/expect -f
+#Auto ssh to each dev in device room
+#If you want to access another machine except dev0x, machine 0 and enter its IP
+
+set machine [lindex $argv 0]
+set machine_usr [lindex $argv 1]
+set machine_pwd [lindex $argv 2]
+
+if { $machine == "home" } {
+    set user "sean"
+    set ip "192.168.15.10"
+    set pwd "0415"
+} elseif { $machine == "AC" } {
+    set user "root"
+    set ip "10.71.1.81"
+    set pwd "CipM6000"
+} elseif { $machine == "ems" } {
+    set user "root"
+    set ip "10.71.88.200"
+    set pwd "CipM6000"
+} elseif { $machine == "cp1" } {
+	set user "root"
+	set ip "10.71.88.100"
+	set pwd "CipM6000"
+
+} elseif { $machine == "cp2" } {
+	set user "root"
+	set ip "10.131.88.101"
+	set pwd "CipM6000"
+} elseif { $machine == "dp" } {
+    set user "root"
+    set ip "10.131.88.1"
+    set pwd "CipM6000"
+} elseif { $machine == "3" } {
+    set user "sean.lin"
+    set ip "10.2.3.249"
+    set pwd "2kd1227SL"
+} elseif { $machine == "4" } {
+    set user "sean.lin"
+    set ip "10.2.3.248"
+    set pwd "2kd1227SL"
+} elseif { $machine == "5" } {
+    set user "sean.lin"
+    set ip "10.2.14.1"
+    set pwd "2kd1227SL"
+} elseif { $machine == "6" } {
+    set user "sean.lin"
+    set ip "10.2.14.2"
+    set pwd "2kd1227SL"
+} elseif { $machine == "6.4" } {
+    set user "sean.lin"
+    set ip "10.2.14.248"
+    set pwd "2kd1227SL"
+} elseif { $machine == "6.3" } {
+    set user "sean.lin"
+    set ip "10.2.14.249"
+    set pwd "2kd1227SL"
+} elseif { $machine == "oap" } {
+    set user "root"
+    set ip "10.71.5.87"
+    set pwd "iamA720root"
+} elseif { $machine == "nap" } {
+    set user "root"
+    set ip "10.71.5.89"
+    set pwd "iamA720root"
+} elseif { $machine == "st100" } {
+    set user "fouripnet"
+    set ip "10.71.14.100"
+    set pwd "cipherium"
+} elseif { $machine == "st102" } {
+    set user "fouripnet"
+    set ip "10.71.14.102"
+    set pwd "cipherium"
+} elseif { $machine == "bin" } {
+    set user "root"
+    set ip "10.131.4.23"
+    set pwd "cipherium"
+} elseif { $machine == "sim" } {
+    set user "root"
+    set ip "10.71.40.253"
+    set pwd "CipM6000"
+} elseif { $machine == "hv801" } {
+    set user "fouripnet"
+    set ip "10.131.5.87"
+    set pwd "cipherium"
+} elseif { $machine == "hv801v3" } {
+    set user "fouripnet"
+    set ip "10.71.13.82"
+    set pwd "cipherium"
+} elseif { $machine == "hvqa" } {
+    set user "fouripnet"
+    set ip "10.131.88.88"
+    set pwd "cipherium"
+} elseif { $machine == "hv525" } {
+    set user "jianan"
+    set ip "10.71.6.31"
+    set pwd "jianan"
+} elseif { $machine == "docker" } {
+    set user "ubuntu"
+    set ip "10.71.5.79"
+    set pwd "Go4ipnet"
+} elseif { $machine == "atca" } {
+    set user "fouripnet"
+    set ip "10.71.13.180"
+    set pwd "cipherium"
+} elseif { $machine == "rcp" } {
+    set user "root"
+    set ip "10.70.13.243"
+    set pwd "CipM6000"
+} elseif { $machine == "rdp" } {
+    set user "root"
+    set ip "10.70.13.242"
+    set pwd "CipM6000"
+} elseif { $machine == "radius" } {
+    set user "adminlab"
+    set ip "10.131.86.100"
+    set pwd "labadmin"
+} elseif { $machine == "mac" } {
+    set user "shaun-mac"
+    set ip "10.71.5.72"
+    set pwd "Fa5203232"
+} elseif { $machine == "opcompute" } {
+    set user "fouripnet"
+    set ip "10.71.150.46"
+    set pwd "cipherium"
+} elseif { $machine == "opvgw" } {
+    set user "root"
+    set ip 10.71.151.30
+    set pwd "CipM6000"
+} elseif { $machine == "vmware" } {
+    set user "root"
+    set ip "10.2.5.5"
+    set pwd "cipherium"
+} elseif { $machine == "vmware-vgw" } {
+    set user "root"
+    set ip "10.71.5.118"
+    set pwd "qS%Chu#4"
+} elseif { $machine == "ws" } {
+    set user "fouripnet"
+    set ip "10.71.14.9"
+    set pwd "fouripnet"
+} elseif { $machine == "apsim241" } {
+    set user "root"
+    set ip "10.71.40.241"
+    set pwd "CipM6000"
+} elseif { $machine == "apsim242" } {
+    set user "root"
+} elseif { $machine == "apsim243" } {
+    set user "root"
+} elseif { $machine == "apsim244" } {
+    set user "root"
+} elseif { $machine == "apsim245" } {
+    set user "root" 
+    set ip "10.71.40.245"
+    set pwd "CipM6000"
+} elseif { $machine == "vwhg-o" } {
+    set user "root"
+    set ip "10.71.151.18"
+    set pwd "qS%Chu#4"
+} elseif { $machine == "vwhg-o1" } {
+    set user "root"
+    set ip "10.71.151.17"
+    set pwd "qS%Chu#4"
+} elseif { $machine == "li" } {
+    set user "adminlab"
+    set ip "10.1.11.8"
+    set pwd "labadmin"
+} elseif { $machine == "chtwhg" } {
+    set user "root"
+    set ip "10.71.55.101"
+	set pwd "CipM6000"
+} elseif { $machine == "vwhg-v" } {
+  set user "root"
+  set ip "10.71.5.23"
+  set pwd "qS%Chu#4"
+} elseif { $machine == "license" } {
+  set user "fouripnet"
+  set ip "10.71.5.80"
+  set pwd "cipherium"
+} elseif { $machine == "esxi525" } {
+  set user "root"
+  set ip "10.71.13.40"
+  set pwd "cipherium"
+} elseif { $machine == "esxi802" } {
+  set user "root"
+  set ip "10.71.13.50"
+  set pwd "cipherium"
+} elseif { $machine_usr == "fouripnet" } {
+  set user "$machine_usr"
+  set ip "$machine"
+  set pwd "cipherium"
+} else {
+  set user "root"
+  set ip "$machine"
+  set pwd "$machine_pwd"
+}
+
+#XENA : 10.71.200.200/ pwd:xena
+puts "Start to login...";
+spawn ssh -o "StrictHostKeyChecking no" $user@$ip
+expect {
+    "*(yes/no)" {
+        send -- "yes\r"
+        send -- "\r"
+        expect "*?assword:*"
+        send -- "$pwd\r"
+        send -- "\r"
+    }
+    "*?assword:*" {
+        send -- "$pwd\r"
+        send -- "\r"
+    }
+}
+#Get back of the control right
+interact
