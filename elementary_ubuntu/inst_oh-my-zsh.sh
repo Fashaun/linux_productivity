@@ -11,7 +11,7 @@
 #  REQUIREMENTS: ---
 #          BUGS: ---
 #         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
+#        AUTHOR: Shaun Lin (), 
 #  ORGANIZATION: 
 #       CREATED: 12/09/2016 21:15
 #      REVISION:  ---
@@ -41,3 +41,5 @@ mkdir ~/.dir_colors/
 #Run set_dark.sh
 
 #cp vim-solarized
+
+#Unfinished .....

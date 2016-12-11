@@ -15,14 +15,17 @@ brew install mercurial
 echo -e "Install bash completion ...\n"
 brew install bash-completion
 
-echo "Install Ctags ...\n"
+echo -e "Install Ctags ...\n"
 brew install ctags
 
-echo "Install colordiff ...\n"
+echo -e "Install colordiff ...\n"
 brew install colordiff
 
-echo "Install tmux ...\n"
+echo -e "Install tmux ...\n"
 brew install tmux
 
-echo "Install NVM (Node Version Manager) ..."
+echo -e "Install NVM (Node Version Manager) ...\n"
 brew install nvm
+
+echo -e "Install iproute2 for mac OS\n"
+brew install iproute2mac
