@@ -2,8 +2,15 @@
 
 #sudo apt-get update
 
-echo -e "\nIntall vim ...\n"
+echo -e "\nInstall vim ...\n"
 sudo apt-get install vim
+
+echo -e "\nInstall ssh server side\n"
+sudo apt install openssh-server
+
+echo -e "\nInstall apache2\n"
+sudo apt install apache2
+sudo apt install apache2-bin
 
 echo -e "\nInstall related bundle\n"
 sudo apt-get install build-essential cmake
@@ -81,6 +88,8 @@ sudo apt-get install dconf-tools
 #PHP5 and PHP5 CLI
 echo -e "\nInseetall php5 and its command line\n"
 sudo apt-get install php5 php5-cli
+
+#sudo apt install php (will install php7)
 
 #MegaSync
 sudo dpkg -i $deb_file
