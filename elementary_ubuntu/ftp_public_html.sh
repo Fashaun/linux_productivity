@@ -23,3 +23,4 @@ sudo apt install apache2
 sudo a2enmod userdir
 service apache2 restart
 sudo apt install php
+mkdir -p ~/public_html
