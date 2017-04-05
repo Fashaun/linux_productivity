@@ -1,0 +1,19 @@
+Cusor move unit
+
+character : 
+  h - ←  
+  j - ↓
+  k - ↑
+  l - →
+
+word : 
+
+  w - jump to next word
+  W - jump to next word (ignore each mark)
+  b - jump to previous word
+  e - jump to end of word
+
+line
+paragraph
+block
+screen
