@@ -17,3 +17,11 @@ line
 paragraph
 block
 screen
+
+Keymap in Plugin 
+
+vim fold
+zo - open folder
+zc - close folder
+zm - close all folder
+zx - close all except cusor location floder
